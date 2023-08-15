@@ -8,8 +8,7 @@ const Footer = () => {
       </div>
       <div className="flex flex-col-reverse md:flex-row items-center md:justify-between gap-y-6 md:gap-y-0">
         <span className="text-sm">
-          &copy; {new Date().getFullYear()} Блог Татьяны Маспановой All Rights
-          Reserved.
+          &copy; {new Date().getFullYear()} Блог Татьяны Маспановой
         </span>
         <span className="flex items-center text-sm">
           Powered by

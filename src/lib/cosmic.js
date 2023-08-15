@@ -44,25 +44,6 @@ export async function getAllPosts(preview, postType, postCount) {
   }
 }
 
-export async function getAllGallery(preview, postType, postCount) {
-  try {
-    const data = await cosmic.objects
-      .find({
-        type: postType,
-      })
-      .props(
-        'title,slug,metadata.category,metadata.excerpt,metadata.published_date,created_at,status'
-      )
-      .limit(postCount)
-      .sort('-created_at')
-      .status(preview ? 'any' : 'published')
-    return data.objects
-  } catch (error) {
-    if (is404(error)) return
-    throw error
-  }
-}
-
 export async function getAllPostsWithSlug() {
   try {
     const data = await cosmic.objects.find({

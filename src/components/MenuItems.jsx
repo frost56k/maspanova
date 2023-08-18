@@ -12,8 +12,12 @@ export const routes = [
     label: 'Посты',
   },
   {
-    path: '/works',
+    path: '/tracks',
     label: 'Маршруты',
+  },
+  {
+    path: '/gallery',
+    label: 'Галерея',
   },
   {
     path: '/about',

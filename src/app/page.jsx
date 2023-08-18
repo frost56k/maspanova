@@ -1,20 +1,20 @@
 import { getAllPosts, getPageBySlug } from '@/lib/cosmic'
 import IntroSection from '@/sections/IntroSection'
-import WorksSection from '@/sections/WorksSection'
+import TracksSection from '@/sections/TracksSection'
 import PostsSection from '@/sections/PostsSection'
 import { draftMode } from 'next/headers'
 import getMetadata from 'helpers/getMetadata'
 
 async function getData() {
   const { isEnabled } = draftMode()
-  const [allPosts, allWorks, pageData] = await Promise.all([
+  const [allPosts, allTracks, pageData] = await Promise.all([
     getAllPosts(isEnabled, 'posts', 3) || [],
-    getAllPosts(isEnabled, 'works', 3) || [],
+    getAllPosts(isEnabled, 'tracks', 3) || [],
     getPageBySlug('home-page', 'metadata'),
   ])
   return {
     allPosts,
-    allWorks,
+    allTracks,
     pageData,
   }
 }
@@ -71,7 +71,7 @@ export async function generateMetadata() {
 const HomePage = async () => {
   const data = await getData()
   const allPosts = data.allPosts
-  const allWorks = data.allWorks
+  const allTracks = data.allTracks
   const pageData = data.pageData
 
   return (
@@ -83,7 +83,7 @@ const HomePage = async () => {
         socials={pageData?.metadata.socials}
       />
       <PostsSection posts={allPosts} />
-      <WorksSection posts={allWorks} />
+      <TracksSection posts={allTracks} />
     </>
   )
 }

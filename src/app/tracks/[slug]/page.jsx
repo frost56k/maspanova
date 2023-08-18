@@ -13,7 +13,7 @@ export async function generateMetadata({ params }) {
     getPageBySlug('social-config', 'metadata'),
     getPageBySlug('site-settings', 'metadata'),
   ])
-  const currentPage = 'works'
+  const currentPage = 'tracks'
 
   const title = getMetadata(getData?.post?.title)
   const description = getMetadata(getData?.post?.metadata?.excerpt)
@@ -59,7 +59,7 @@ export async function generateMetadata({ params }) {
   }
 }
 
-const SingleWork = async ({ params }) => {
+const SingleTrack = async ({ params }) => {
   const { isEnabled } = draftMode()
   const getData = await getPostAndMorePosts(params.slug, isEnabled)
 
@@ -82,4 +82,4 @@ const SingleWork = async ({ params }) => {
     </>
   )
 }
-export default SingleWork
+export default SingleTrack

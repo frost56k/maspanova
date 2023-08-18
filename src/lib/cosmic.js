@@ -32,7 +32,7 @@ export async function getAllPosts(preview, postType, postCount) {
         type: postType,
       })
       .props(
-        'title,slug,metadata.category,metadata.excerpt,metadata.published_date,created_at,status'
+        'title,slug,metadata.category,metadata.excerpt,metadata.published_date,created_at,status,metadata.cover_image'
       )
       .limit(postCount)
       .sort('-created_at')

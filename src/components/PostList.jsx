@@ -1,6 +1,7 @@
 import Date from './Date'
 import Link from 'next/link'
 import { ForwardArrowIcon } from '@/configs/icons'
+import Image from "next/image";
 
 const PostList = ({ allPosts, postType, home }) => {
   return <>
@@ -24,6 +25,19 @@ const PostList = ({ allPosts, postType, home }) => {
                 : 'group flex flex-col justify-start gap-y-6 p-8 h-full'
             }>
 
+            <Image
+              className="w-full rounded-t"
+              src={post.metadata.cover_image.imgix_url}
+              width={130}
+              height={130}
+              alt={post.title}
+              style={{
+                maxWidth: "130px",
+                height: "auto"
+              }}
+            />
+
+
             <div className="max-w-lg">
               <h3 className="text-xl font-bold mb-1 group-hover:text-accent transition-colors">
                 {post.title}{' '}
@@ -40,7 +54,7 @@ const PostList = ({ allPosts, postType, home }) => {
             {home ? (
               <Date
                 dateString={post.created_at}
-                formatStyle="LLLL, yyyy"
+                formatStyle="LLLL yyyy"
               ></Date>
             ) : (
               <p className="flex items-center text-fore-subtle text-sm">
@@ -50,7 +64,7 @@ const PostList = ({ allPosts, postType, home }) => {
                 </span>
                 {post.status === 'draft' && (
                   <span className="absolute right-1 top-1 bg-back-subtle px-3 py-1 rounded text-accent">
-                    Draft
+                    Черновик
                   </span>
                 )}
               </p>

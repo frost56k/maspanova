@@ -2,7 +2,7 @@ import React from 'react'
 import PostList from '@/components/PostList'
 import { CompasIcon } from '@/configs/icons'
 
-const WorksSection = ({ posts }) => {
+const TracksSection = ({ posts }) => {
   return (
     <section className="mt-12">
       <span className="flex items-center mb-8">
@@ -11,9 +11,9 @@ const WorksSection = ({ posts }) => {
         </div>
         <h4 className="text-xl text-accent font-semibold">Маршруты</h4>
       </span>
-      <PostList allPosts={posts} postType="works" home={true} />
+      <PostList allPosts={posts} postType="tracks" home={true} />
     </section>
   )
 }
 
-export default WorksSection
+export default TracksSection

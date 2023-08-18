@@ -5,13 +5,13 @@ import getMetadata from 'helpers/getMetadata'
 
 async function getData() {
   const { isEnabled } = draftMode()
-  const [allPosts, allWorkCategories] = await Promise.all([
-    getAllPosts(isEnabled, 'works') || [],
+  const [allPosts, allTrackCategories] = await Promise.all([
+    getAllPosts(isEnabled, 'tracks') || [],
     getAllCategories('work-categories') || [],
   ])
   return {
     allPosts,
-    allWorkCategories,
+    allTrackCategories,
   }
 }
 
@@ -26,7 +26,7 @@ export async function generateMetadata() {
   const image = getMetadata(
     siteSettings?.metadata?.default_meta_image?.imgix_url
   )
-  const url = getMetadata(`${siteSettings?.metadata.site_url}/works`)
+  const url = getMetadata(`${siteSettings?.metadata.site_url}/tracks`)
   const twitterHandle = getMetadata(socialData?.metadata?.twitter)
 
   return {
@@ -62,10 +62,10 @@ export async function generateMetadata() {
   }
 }
 
-const WorksPage = async () => {
+const TracksPage = async () => {
   const data = await getData()
   const allPosts = data.allPosts
-  const allWorkCategories = data.allWorkCategories
+  const allTrackCategories = data.allTrackCategories
 
   return (
     <>
@@ -74,12 +74,12 @@ const WorksPage = async () => {
       </h1>
       <FilteredPosts
         posts={allPosts}
-        categories={allWorkCategories}
-        postType={'works'}
+        categories={allTrackCategories}
+        postType={'tracks'}
       />
     </>
   )
 }
 
 export const revalidate = 60
-export default WorksPage
+export default TracksPage

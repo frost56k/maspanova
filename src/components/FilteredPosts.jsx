@@ -1,6 +1,6 @@
 'use client'
 import { useState } from 'react'
-import PostList from './PostList'
+import PostCard from './PostCard'
 
 const FilteredPosts = ({ posts, categories, postType }) => {
   const [filterCategory, setFilterCategory] = useState('All')
@@ -36,7 +36,7 @@ const FilteredPosts = ({ posts, categories, postType }) => {
           </li>
         ))}
       </ul>
-      <PostList
+      <PostCard
         allPosts={filterCategory === 'All' ? posts : filteredPosts}
         postType={postType}
         home={false}

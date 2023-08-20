@@ -358,8 +358,8 @@ export const CloseIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      height="1.6em"
-      width="1.6em"
+      height="2em"
+      width="2em"
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"

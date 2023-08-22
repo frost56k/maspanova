@@ -29,25 +29,39 @@ const ImageModal = ({ src, alt }) => {
 
     return (
         <>
-                  <Image
-            src={src}
-            alt={alt}
-            width={400}
-            height={300}
-            quality={50}
-            className='object-cover h-auto max-w-full rounded-lg'
-            onClick={handleOpen}
-        />
+            <Image
+                className='h-auto max-w-full rounded-lg'
+                src={src}
+                alt={alt}
+                width={300}
+                height={300}
+                quality={50}
+                onClick={handleOpen}
+                style={{
+                    width: '18em',
+                    height: '18em',
+                    objectFit: 'cover',
+                  }}
+            />
             {isOpen && ReactDOM.createPortal(
                 <div className="fixed top-0 left-0 flex items-center justify-center w-full h-full bg-black bg-opacity-75">
-                    <div className="fixed bg-gray w-11/12 max-w-2xl lg:p-8 rounded-lg shadow-xl">
+                    <div className="fixed bg-gray w-11/12 max-w-3xl lg:p-8 rounded-lg shadow-xl">
                         <button
                             className="fixed mt-12 ld:mt-4 top-2 right-4 md:right-8 text-gray-500 hover:text-white"
                             onClick={handleClose}
                         >
                             <CloseIcon />
                         </button>
-                        <img src={src} alt={alt} />
+                        <Image
+                         src={src} 
+                         alt={alt} 
+                         width={900}
+                         height={800}
+                         quality={80}
+                         style={{
+                            objectFit: 'cover',
+                          }}
+                         />
                     </div>
                 </div>,
                 document.body

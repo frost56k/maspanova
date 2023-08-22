@@ -1,79 +1,92 @@
-import GalleryBody from '@/components/GalleryBody'
-import { getPostAndMorePosts, getPageBySlug } from '@/lib/cosmic'
-import { notFound } from 'next/navigation'
-import { draftMode } from 'next/headers'
+
+import ImageModal from '../../components/ImageModal'
+import { getPageBySlug } from '@/lib/cosmic'
 import getMetadata from 'helpers/getMetadata'
+import ReactMarkdown from 'react-markdown';
 
-
-export async function generateMetadata({ params }) {
-  const [getData, socialData, siteSettings] = await Promise.all([
-    getPostAndMorePosts(params.slug),
-    getPageBySlug('social-config', 'metadata'),
-    getPageBySlug('site-settings', 'metadata'),
-  ])
-
-  const currentPage = 'gallery'
-
-  const title = getMetadata(getData?.post?.title)
-  const description = getMetadata(getData?.post?.metadata?.excerpt)
-  const image = getMetadata(
-    getData?.post?.metadata?.cover_image?.imgix_url,
-    siteSettings?.metadata?.default_meta_image?.imgix_url ?? ''
-  )
-  const url = getMetadata(
-    `${siteSettings?.metadata.site_url}/${currentPage}/${params.slug}`
-  )
-  const twitterHandle = getMetadata(socialData?.metadata?.twitter)
-
-  return {
-    title: title,
-    description: description,
-    image: image,
-    openGraph: {
-      title: title,
-      description: description,
-      url: url,
-      images: [
-        {
-          url: image,
-          width: 800,
-          height: 600,
-        },
-        {
-          url: image,
-          width: 800,
-          height: 600,
-        },
-      ],
-      locale: 'en_US',
-      type: 'website',
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: title,
-      description: description,
-      creator: twitterHandle,
-      images: [image],
-    },
-  }
+async function getData() {
+    const pageData = (await getPageBySlug('gallery', 'content,metadata')) || []
+    return {
+        pageData,
+    }
 }
 
-const SinglePost = async ({ params }) => {
-  const { isEnabled } = draftMode()
-  const getData = await getPostAndMorePosts(params.slug, isEnabled)
+export async function generateMetadata() {
+    const [pageData, socialData, siteSettings] = await Promise.all([
+        getPageBySlug('gallery', 'metadata'),
+        getPageBySlug('social-config', 'metadata'),
+        getPageBySlug('site-settings', 'metadata'),
+    ])
 
-  if (!getData) {
-    return notFound()
-  }
+    const title = getMetadata(pageData?.metadata?.meta_title)
+    const description = getMetadata(pageData?.metadata?.meta_description)
+    const image = getMetadata(
+        pageData?.metadata?.meta_image?.imgix_url,
+        siteSettings?.metadata?.default_meta_image?.imgix_url ?? ''
+    )
+    const url = getMetadata(`${siteSettings?.metadata?.site_url}/gallery`)
+    const twitterHandle = getMetadata(socialData?.metadata?.twitter)
 
-  const post = getData.post
-
-  return (
-    <>
-      <article className="border-b border-back-subtle py-8 mb-8">
-        <GalleryBody content={post.metadata.content} />
-      </article>
-    </>
-  )
+    return {
+        title: title,
+        description: description,
+        image: image,
+        openGraph: {
+            title: title,
+            description: description,
+            url: url,
+            images: [
+                {
+                    url: image,
+                    width: 800,
+                    height: 600,
+                },
+                {
+                    url: image,
+                    width: 1800,
+                    height: 1600,
+                },
+            ],
+            locale: 'en_US',
+            type: 'website',
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: title,
+            description: description,
+            creator: twitterHandle,
+            images: [image],
+        },
+    }
 }
-export default SinglePost
+
+const components = {
+    img: ({ node, ...props }) => {
+        return (
+            <ImageModal src={props.src} alt={props.alt} />
+        );
+    },
+}
+
+const Gallery = async () => {
+    const data = await getData()
+    const pageData = data.pageData
+
+    return (
+        <>
+            <article className="border-b border-back-subtle py-8 mb-8">
+                <h1 className="text-2xl md:text-3xl mb-12 font-bold">
+                    {pageData?.metadata.heading}
+                </h1>
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-2 text-xs lg:text-sm">
+                    <ReactMarkdown components={components}>
+                        {pageData?.metadata.photos}
+                    </ReactMarkdown>
+                </div>
+            </article>
+        </>
+    )
+}
+
+export const revalidate = 60
+export default Gallery

@@ -3,7 +3,7 @@ const ImageModal = dynamic(() => import('./ImageModal'));
 
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import Image from "next/image";
+
 
 
 const components = {
@@ -17,7 +17,7 @@ const components = {
 const GalleryBody = ({ content }) => {
   return (
     <>
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-xs lg:text-sm">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-2 text-xs lg:text-sm">
         <ReactMarkdown components={components}>
           {content}
         </ReactMarkdown>

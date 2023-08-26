@@ -5,6 +5,8 @@ import { notFound } from 'next/navigation'
 import { draftMode } from 'next/headers'
 import getMetadata from 'helpers/getMetadata'
 import Date from '../../../components/Date'
+import BackToTopButton from '@/components/BackToTopButton'
+
 
 export async function generateMetadata({ params }) {
   const [getData, socialData, siteSettings] = await Promise.all([
@@ -74,10 +76,11 @@ const SinglePost = async ({ params }) => {
       <article className="border-b border-back-subtle py-8 mb-8">
         <PostHeader post={post} />
         <PostBody content={post.metadata.content} />
-        <div className='date text-end mt-8 mb-8'>
-             <Date dateString={post?.metadata?.date} formatStyle="LLLL dd, yyyy" />
-          </div>
+        <span className='flex justify-end'>
+        <BackToTopButton />
+        </span>
       </article>
+
     </>
   )
 }

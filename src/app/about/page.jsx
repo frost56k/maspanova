@@ -1,8 +1,10 @@
 import Image from 'next/image'
 import { getPageBySlug } from '@/lib/cosmic'
 import Socials from '@/components/Socials'
-import { sanitize } from 'isomorphic-dompurify'
+import markdownStyles from '../../components/markdown-styles.module.css'
+import ReactMarkdown from 'react-markdown'
 import getMetadata from 'helpers/getMetadata'
+
 
 async function getData() {
   const pageData = (await getPageBySlug('about-page', 'content,metadata')) || []
@@ -99,12 +101,11 @@ const AboutPage = async () => {
           </div>
           </div>
           <div className="flex-1 mt-0 flex flex-col justify-start gap-y-8 px-12 pl-5">
-            <div
-              className="text-fore-primary mb-8 space-y-4"
-              dangerouslySetInnerHTML={{
-                __html: sanitize(pageData?.content),
-              }}
-            />
+          <ReactMarkdown
+        className={markdownStyles['markdown']}
+      >
+        {pageData?.metadata.content}
+      </ReactMarkdown>
           </div>
         </div>
       </section>

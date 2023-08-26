@@ -100,20 +100,6 @@ export async function getAllCategories(category) {
   }
 }
 
-export async function getAllImages(gallery) {
-  try {
-    const data = await cosmic.objects
-      .find({
-        type: gallery,
-      })
-      .props('content')
-    return data.objects
-  } catch (error) {
-    if (is404(error)) return
-    throw error
-  }
-}
-
 export async function getPageBySlug(slug, props) {
   try {
     const data = await cosmic.objects

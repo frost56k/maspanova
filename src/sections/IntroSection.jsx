@@ -13,9 +13,8 @@ const IntroSection = ({ heading, subHeading, avatar, socials }) => {
         </h2>
         <Socials
           email={socials?.metadata.email}
-          facebook={socials?.metadata.facebook}
           instagram={socials?.metadata.instagram}
-          vk={socials?.metadata.vk}
+          youtube={socials?.metadata.youtube}
         />
       </div>
       <div className="w-[80px] sm:w-[186px] relative mb-6 sm:mb-0 rounded-full">

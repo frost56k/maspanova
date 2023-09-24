@@ -246,113 +246,38 @@ export const HeadphonesIcon = () => {
 
 // Social Icons
 
-export const FacebookIcon = () => {
+export const EmailIcon = () => {
   return (
-    <svg
-      fill-rule="evenodd"
-      clip-rule="evenodd"
-      stroke-linejoin="round"
-      stroke-miterlimit="2"
-      stroke="currentColor"
-      fill="currentColor"
-      strokeWidth="2"
-      viewBox="0 0 512 512"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      height="1.1em"
-      width="1.1em"
-      xmlns="http://www.w3.org/2000/svg"
-      className="text-xl text-fore-subtle group-hover:-translate-y-2 transition-transform"
-    >
-      <path d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
-    </svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"></path>
+   <path d="M3 7l9 6l9 -6"></path>
+</svg>
   )
 }
 
 export const InstagramIcon = () => {
   return (
-    <svg
-      fill-rule="evenodd"
-      clip-rule="evenodd"
-      stroke-linejoin="round"
-      stroke-miterlimit="2"
-      stroke="currentColor"
-      fill="currentColor"
-      strokeWidth="2"
-      viewBox="0 0 512 512"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      height="1.1em"
-      width="1.1em"
-      xmlns="http://www.w3.org/2000/svg"
-      className="text-xl text-fore-subtle group-hover:-translate-y-2 transition-transform"
-    >
-      <path d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-193.446,81c-47.527,0 -53.487,0.201 -72.152,1.053c-18.627,0.85 -31.348,3.808 -42.48,8.135c-11.508,4.472 -21.267,10.456 -30.996,20.184c-9.729,9.729 -15.713,19.489 -20.185,30.996c-4.326,11.132 -7.284,23.853 -8.135,42.48c-0.851,18.665 -1.052,24.625 -1.052,72.152c0,47.527 0.201,53.487 1.052,72.152c0.851,18.627 3.809,31.348 8.135,42.48c4.472,11.507 10.456,21.267 20.185,30.996c9.729,9.729 19.488,15.713 30.996,20.185c11.132,4.326 23.853,7.284 42.48,8.134c18.665,0.852 24.625,1.053 72.152,1.053c47.527,0 53.487,-0.201 72.152,-1.053c18.627,-0.85 31.348,-3.808 42.48,-8.134c11.507,-4.472 21.267,-10.456 30.996,-20.185c9.729,-9.729 15.713,-19.489 20.185,-30.996c4.326,-11.132 7.284,-23.853 8.134,-42.48c0.852,-18.665 1.053,-24.625 1.053,-72.152c0,-47.527 -0.201,-53.487 -1.053,-72.152c-0.85,-18.627 -3.808,-31.348 -8.134,-42.48c-4.472,-11.507 -10.456,-21.267 -20.185,-30.996c-9.729,-9.728 -19.489,-15.712 -30.996,-20.184c-11.132,-4.327 -23.853,-7.285 -42.48,-8.135c-18.665,-0.852 -24.625,-1.053 -72.152,-1.053Zm0,31.532c46.727,0 52.262,0.178 70.715,1.02c17.062,0.779 26.328,3.63 32.495,6.025c8.169,3.175 13.998,6.968 20.122,13.091c6.124,6.124 9.916,11.954 13.091,20.122c2.396,6.167 5.247,15.433 6.025,32.495c0.842,18.453 1.021,23.988 1.021,70.715c0,46.727 -0.179,52.262 -1.021,70.715c-0.778,17.062 -3.629,26.328 -6.025,32.495c-3.175,8.169 -6.967,13.998 -13.091,20.122c-6.124,6.124 -11.953,9.916 -20.122,13.091c-6.167,2.396 -15.433,5.247 -32.495,6.025c-18.45,0.842 -23.985,1.021 -70.715,1.021c-46.73,0 -52.264,-0.179 -70.715,-1.021c-17.062,-0.778 -26.328,-3.629 -32.495,-6.025c-8.169,-3.175 -13.998,-6.967 -20.122,-13.091c-6.124,-6.124 -9.917,-11.953 -13.091,-20.122c-2.396,-6.167 -5.247,-15.433 -6.026,-32.495c-0.842,-18.453 -1.02,-23.988 -1.02,-70.715c0,-46.727 0.178,-52.262 1.02,-70.715c0.779,-17.062 3.63,-26.328 6.026,-32.495c3.174,-8.168 6.967,-13.998 13.091,-20.122c6.124,-6.123 11.953,-9.916 20.122,-13.091c6.167,-2.395 15.433,-5.246 32.495,-6.025c18.453,-0.842 23.988,-1.02 70.715,-1.02Zm0,53.603c-49.631,0 -89.865,40.234 -89.865,89.865c0,49.631 40.234,89.865 89.865,89.865c49.631,0 89.865,-40.234 89.865,-89.865c0,-49.631 -40.234,-89.865 -89.865,-89.865Zm0,148.198c-32.217,0 -58.333,-26.116 -58.333,-58.333c0,-32.217 26.116,-58.333 58.333,-58.333c32.217,0 58.333,26.116 58.333,58.333c0,32.217 -26.116,58.333 -58.333,58.333Zm114.416,-151.748c0,11.598 -9.403,20.999 -21.001,20.999c-11.597,0 -20.999,-9.401 -20.999,-20.999c0,-11.598 9.402,-21 20.999,-21c11.598,0 21.001,9.402 21.001,21Z" />
-    </svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-instagram" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"></path>
+   <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+   <path d="M16.5 7.5l0 .01"></path>
+</svg>
   )
 }
 
-export const VkIcon = () => {
+export const YoutubeIcon = () => {
   return (
-    <svg
-      fill-rule="evenodd"
-      clip-rule="evenodd"
-      stroke-linejoin="round"
-      stroke-miterlimit="2"
-      stroke="currentColor"
-      fill="currentColor"
-      strokeWidth="10"
-      viewBox="0 0 512 512"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      height="1.1em"
-      width="1.1em"
-      xmlns="http://www.w3.org/2000/svg"
-      className="text-xl text-fore-subtle group-hover:-translate-y-2 transition-transform"
-    >
-      <path d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-27.066,192.877c-1.557,34.064 -25.35,80.708 -71.381,139.917c-47.585,61.833 -87.85,92.757 -120.776,92.757c-20.406,0 -37.672,-18.819 -51.774,-56.488c-9.416,-34.529 -18.824,-69.053 -28.249,-103.581c-10.473,-37.645 -21.706,-56.493 -33.721,-56.493c-2.62,0 -11.781,5.509 -27.47,16.482l-16.463,-21.205c17.275,-15.175 34.311,-30.347 51.073,-45.546c23.038,-19.898 40.345,-30.368 51.872,-31.426c27.231,-2.619 43.996,16 50.288,55.848c6.802,42.996 11.512,69.738 14.151,80.2c7.862,35.679 16.504,53.498 25.932,53.498c7.317,0 18.327,-11.571 33.006,-34.722c14.648,-23.13 22.497,-40.737 23.559,-52.836c2.095,-19.97 -5.763,-29.976 -23.559,-29.976c-8.382,0 -17.023,1.925 -25.911,5.736c17.205,-56.332 50.072,-83.689 98.573,-82.131c35.937,1.057 52.902,24.341 50.85,69.966Z" />
-    </svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-youtube" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M2 8a4 4 0 0 1 4 -4h12a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-12a4 4 0 0 1 -4 -4v-8z"></path>
+   <path d="M10 9l5 3l-5 3z"></path>
+</svg>
   )
 }
 
-export const LinkedinIcon = () => {
-  return (
-    <svg
-      stroke="currentColor"
-      fill="none"
-      strokeWidth="2"
-      viewBox="0 0 24 24"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      height="1em"
-      width="1em"
-      xmlns="http://www.w3.org/2000/svg"
-      className="text-xl text-fore-subtle group-hover:-translate-y-2 transition-transform"
-    >
-      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-      <rect x="2" y="9" width="4" height="12"></rect>
-      <circle cx="4" cy="4" r="2"></circle>
-    </svg>
-  )
-}
 
-export const EmailIcon = () => {
-  return (
-    <svg
-      stroke="currentColor"
-      fill="currentColor"
-      strokeWidth="0"
-      viewBox="0 0 24 24"
-      height="1.1em"
-      width="1.1em"
-      xmlns="http://www.w3.org/2000/svg"
-      className="text-xl text-fore-subtle group-hover:-translate-y-2 transition-transform"
-    >
-      <path fill="none" d="M0 0h24v24H0z"></path>
-      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10h5v-2h-5c-4.34 0-8-3.66-8-8s3.66-8 8-8 8 3.66 8 8v1.43c0 .79-.71 1.57-1.5 1.57s-1.5-.78-1.5-1.57V12c0-2.76-2.24-5-5-5s-5 2.24-5 5 2.24 5 5 5c1.38 0 2.64-.56 3.54-1.47.65.89 1.77 1.47 2.96 1.47 1.97 0 3.5-1.6 3.5-3.57V12c0-5.52-4.48-10-10-10zm0 13c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"></path>
-    </svg>
-  )
-}
 
 // Semantic Icons
 

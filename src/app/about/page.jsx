@@ -94,9 +94,8 @@ const AboutPage = async () => {
           <div className='socials flex justify-center space-x-4'>
           <Socials
             email={pageData?.metadata.socials.metadata.email}
-            facebook={pageData?.metadata.socials.metadata.facebook}
             instagram={pageData?.metadata.socials.metadata.instagram}
-            vk={pageData?.metadata.socials.metadata.vk}
+            youtube={pageData?.metadata.socials.metadata.youtube}
           />
           </div>
           </div>

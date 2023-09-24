@@ -5,7 +5,7 @@ import AlertPreview from '@/components/AlertPreview'
 import { draftMode } from 'next/headers'
 import { notFound } from 'next/navigation'
 import getMetadata from 'helpers/getMetadata'
-import Date from '../../../components/Date'
+import BackToTopButton from '@/components/BackToTopButton'
 
 export async function generateMetadata({ params }) {
   const [getData, socialData, siteSettings] = await Promise.all([
@@ -75,9 +75,9 @@ const SingleTrack = async ({ params }) => {
         {post.status === 'draft' ? <AlertPreview preview={true} /> : undefined}
         <PostHeader post={post} />
         <PostBody content={post.metadata.content} />
-        <div className='date text-end mt-8 mb-8'>
-          <Date dateString={post?.metadata?.date} formatStyle="LLLL dd, yyyy" />
-        </div>
+        <span className='flex justify-end'>
+        <BackToTopButton />
+        </span>
       </article>
     </>
   )

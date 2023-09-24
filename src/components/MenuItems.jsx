@@ -21,7 +21,7 @@ export const routes = [
   },
   {
     path: '/about',
-    label: 'Про меня',
+    label: 'Обо мне',
   },
 ]
 

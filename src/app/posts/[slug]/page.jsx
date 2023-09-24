@@ -4,7 +4,6 @@ import { getPostAndMorePosts, getPageBySlug } from '@/lib/cosmic'
 import { notFound } from 'next/navigation'
 import { draftMode } from 'next/headers'
 import getMetadata from 'helpers/getMetadata'
-import Date from '../../../components/Date'
 import BackToTopButton from '@/components/BackToTopButton'
 
 

@@ -20,7 +20,7 @@ const IntroSection = ({ heading, subHeading, avatar, socials }) => {
       <div className="w-[80px] sm:w-[186px] relative mb-6 sm:mb-0 rounded-full">
         <Image
           src={avatar}
-          alt="Developer Avatar"
+          alt="Tanya Avatar"
           height={186}
           width={186}
           quality={60}

@@ -78,7 +78,7 @@ const Gallery = async () => {
                 <h1 className="text-2xl md:text-3xl mb-12 font-bold">
                     {pageData?.metadata.heading}
                 </h1>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-2 text-xs lg:text-sm">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-2 text-xs lg:text-sm cursor-pointer">
                     <ReactMarkdown components={components}>
                         {pageData?.metadata.photos}
                     </ReactMarkdown>

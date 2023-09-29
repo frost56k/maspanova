@@ -6,7 +6,7 @@ const Socials = ({ email, instagram, youtube }) => {
       <span className="flex gap-x-5 ml-2">
         <a
           href={`mailto:${email}`}
-          className="group cursor-pointer"
+          className="group cursor-pointer social-link"
           aria-label="Email"
           title="Email"
         >
@@ -15,7 +15,7 @@ const Socials = ({ email, instagram, youtube }) => {
 
         <a
           href={`https://www.instagram.com/${instagram}`}
-          className="group cursor-pointer"
+          className="group cursor-pointer social-link"
           aria-label="Instagram"
           title="Instagram"
           target="_blank"
@@ -26,7 +26,7 @@ const Socials = ({ email, instagram, youtube }) => {
 
         <a
           href={`https://www.youtube.com/@${youtube}`}
-          className="group cursor-pointer"
+          className="group cursor-pointer social-link"
           aria-label="youtube"
           title="youtube"
           target="_blank"
